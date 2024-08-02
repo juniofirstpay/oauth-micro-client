@@ -133,6 +133,7 @@ class OAuthMicroClient(object):
         username: str,
         otp: int,
         otp_token: str,
+        device_id: str=None
     ):
         return self.oauth_service.authorize_via_otp(
             client_id=client_id,
@@ -141,7 +142,8 @@ class OAuthMicroClient(object):
             scope=scope,
             username=username,
             otp=otp,
-            otp_token=otp_token
+            otp_token=otp_token,
+            device_id=device_id
         )
 
     def register(
