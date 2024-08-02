@@ -307,14 +307,16 @@ class OAuthService(object):
         action: str,
         token: str,
         otp: str,
-        scope: str = None
+        scope: str = None,
+        device_id: str = None
     ):
         data = {
             "mobile_num": mobile_num,
             "action": action,
             "token": token,
             "otp": otp,
-            "scope" : scope
+            "scope" : scope,
+            "device_id": device_id
         }
         headers = self.base_headers
         response = self.request.post(
