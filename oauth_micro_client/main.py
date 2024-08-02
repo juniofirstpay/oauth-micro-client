@@ -68,7 +68,8 @@ class OAuthMicroClient(object):
         mobile_number: str,
         otp_token: str,
         otp: str,
-        scope: str = None
+        scope: str = None,
+        device_id: str = None
     ):
         response = self.oauth_service.otp(
             client_id=client_id,
@@ -78,7 +79,8 @@ class OAuthMicroClient(object):
             otp_token=otp_token,
             otp=otp,
             send_sms=False,
-            scope = scope
+            scope = scope,
+            device_id=device_id
         )
         return response
 
